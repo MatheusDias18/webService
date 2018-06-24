@@ -11,6 +11,7 @@ package com.github.viniciussoaresti.webservice;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 /**
  * Root resource (exposed at "myresource" path)
@@ -55,7 +56,7 @@ public class MyApplicationController {
     */
     @Path("soma")
     /*Acessamos esse método pelo caminho
-    http://localhost:8084/webService/meuwebservice/soma */
+    http://localhost:porta/webService/meuwebservice/soma */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String soma() {
@@ -63,7 +64,7 @@ public class MyApplicationController {
     }
     @Path("diferenca")
     /*Acessamos esse método pelo caminho
-   http://localhost:8084/webService/meuwebservice/diferenca */
+   http://localhost:porta/webService/meuwebservice/diferenca */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String diferenca() {
@@ -71,7 +72,7 @@ public class MyApplicationController {
     }
     @Path("multiplicacao")
     /*Acessamos esse método pelo caminho
-    http://localhost:8084/webService/meuwebservice/multiplicacao */
+    http://localhost:porta/webService/meuwebservice/multiplicacao */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String multiplicacao() {
@@ -79,18 +80,30 @@ public class MyApplicationController {
     }
     @Path("divisao")
     /*Acessamos esse método pelo caminho
-    http://localhost:8084/webService/meuwebservice/divisao */
+    http://localhost:porta/webService/meuwebservice/divisao */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String divisao() {
         return Double.toString(10/6);
     }
+    @Path("parametros")
+    /*Acessamos esse método pelo caminho
+    http://localhost:porta/webService/meuwebservice/parametros */
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    /*Esse QueryParam é o parametro que utilizaremos depois,
+    sendo passado assim: http://localhost:porta/nome-projeto/
+    meuwebservice/parametros/query?nome=Leonardo */
+    public String parametros(@QueryParam("nome") String nomeUsuario){
+    return "Olá" + nomeUsuario;
+}
+    
     
     /*
     Pra próxima aula, é interessante perguntar como fazer e treinar:
-    -receber parâmetros pela url, ou algo semelhante
     -transformar arquivos em json e tal
     -qual o nível de complexidade que ele quer pra um 10
+    -como e porque utilizar a biblioteca Gson
     -etc.
     */
 }
