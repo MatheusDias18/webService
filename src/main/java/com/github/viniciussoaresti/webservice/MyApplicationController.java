@@ -46,53 +46,12 @@ public class MyApplicationController {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String olaMundo() {
-        return "Olá mundo!";
+        return "Ola mundo!";
     }
-
     /*
     A nota da unidade é fazer um crud funcionando. Com ou sem BD.
-    Ao fazer outro método, sem definir um path, a aplicação crashou.
-    Ou seja, creio que ao definir o path da classe, e ter um método sem path,
-    dentro dele, ele é meio que a 'main'.
-    Portanto, imaginemos agora que a classe chama 'calculadora', e possui
-    os seguintes métodos:
      */
-    @Path("soma")
-    /*Acessamos esse método pelo caminho
-    http://localhost:porta/webService/meuwebservice/soma */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String soma() {
-        return Integer.toString(1 + 1);
-    }
-
-    @Path("diferenca")
-    /*Acessamos esse método pelo caminho
-   http://localhost:porta/webService/meuwebservice/diferenca */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String diferenca() {
-        return Integer.toString(1 - 2);
-    }
-
-    @Path("multiplicacao")
-    /*Acessamos esse método pelo caminho
-    http://localhost:porta/webService/meuwebservice/multiplicacao */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String multiplicacao() {
-        return Integer.toString(10 * 7);
-    }
-
-    @Path("divisao")
-    /*Acessamos esse método pelo caminho
-    http://localhost:porta/webService/meuwebservice/divisao */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String divisao() {
-        return Double.toString(10 / 6);
-    }
-
+    
     @Path("parametros")
     /*Acessamos esse método pelo caminho
     http://localhost:porta/webService/meuwebservice/parametros */
@@ -112,7 +71,7 @@ public class MyApplicationController {
         Pessoa pessoa = new Pessoa("leonardo");
         String json = new Gson().toJson(pessoa).toString();
         /*Esse é o código que Léo forneceu:
-        return new Response.status(Response.Status.OK.entity)(jsonCriado).build();
+        return new Response.status(Status.OK.entity)(jsonCriado).build();
         Porém peguei o daqui:
         https://stackoverflow.com/questions/4687271/jax-rs-how-to-return-json-and-http-status-code-together
         */
