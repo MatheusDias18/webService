@@ -50,6 +50,8 @@ public class MyApplicationController {
     }
     /*
     A nota da unidade é fazer um crud funcionando. Com ou sem BD.
+    Armazenar hashmap. Index - size.
+    O @post precisa de extensão. usar o @get.
      */
     
     @Path("parametros")
