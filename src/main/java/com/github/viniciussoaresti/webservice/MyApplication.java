@@ -14,7 +14,7 @@ import javax.ws.rs.core.Application;
  */
 /*
 Oi, veneceo aqui.
-Então, o que fizemos até agora, foi adicionar umas dependências
+Então, o que fizemos até agora, foi adicionar umas dependências (jersey e gson)
 do jersey nesse projeto maven web.
 Esse @ApplicationPath("/"), pelo que entendi, é pra dizer que
 nosso projeto rodará nesse diretório, e após esse "/", qualquer
